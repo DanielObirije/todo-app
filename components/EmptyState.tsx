@@ -14,8 +14,8 @@ const EmptyState = () => {
       <LinearGradient colors={colors.gradients.empty} style={homeStyles.emptyIconContainer}>
         <Ionicons name="clipboard-outline" size={60} color={colors.textMuted} />
       </LinearGradient>
-      <Text style={homeStyles.emptyText}>No todos yet!</Text>
-      <Text style={homeStyles.emptySubtext}>Add your first todo above to get started</Text>
+      <Text testID="empty-todo-title" style={homeStyles.emptyText}>No todos yet!</Text>
+      <Text testID="empty-todo-description" style={homeStyles.emptySubtext}>Add your first todo above to get started</Text>
     </View>
   );
 };

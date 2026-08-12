@@ -29,6 +29,7 @@ const TabsLayout = () => {
         name="index"
         options={{
           title: "Todos",
+          tabBarAccessibilityLabel: "todo-tab",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="flash-outline" size={size} color={color} />
           ),
@@ -38,7 +39,10 @@ const TabsLayout = () => {
         name="settings"
         options={{
           title: "Settings",
-          tabBarIcon: ({ color, size }) => <Ionicons name="settings" size={size} color={color} />,
+          tabBarAccessibilityLabel: "settings-tab",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="settings" size={size} color={color} />
+          ),
         }}
       />
     </Tabs>

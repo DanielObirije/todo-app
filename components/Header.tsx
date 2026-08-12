@@ -25,8 +25,8 @@ const Header = () => {
         </LinearGradient>
 
         <View style={homeStyles.titleTextContainer}>
-          <Text style={homeStyles.title}>Today&apos;s Tasks 👀</Text>
-          <Text style={homeStyles.subtitle}>
+          <Text testID="todo-header-title" style={homeStyles.title}>Today&apos;s Tasks 👀</Text>
+          <Text testID="todo-header-percentage" style={homeStyles.subtitle}>
             {completedCount} of {totalCount} completed
           </Text>
         </View>
