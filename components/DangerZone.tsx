@@ -15,7 +15,7 @@ const DangerZone = () => {
 
   const handleResetApp = async () => {
     Alert.alert(
-      "Reset App",
+      "Reset App Alert",
       "⚠️ This will delete ALL your todos permanently. This action cannot be undone.",
       [
         { text: "Cancel", style: "cancel" },
@@ -28,31 +28,58 @@ const DangerZone = () => {
               Alert.alert(
                 "App Reset",
                 `Successfully deleted ${result.deletedCount} todo${result.deletedCount === 1 ? "" : "s"}. Your app has been reset.`
+
               );
+              // Alert.alert(
+              //   "App Reset",
+              //   `Successfully deleted ${result.deletedCount} todo${
+              //     result.deletedCount === 1 ? "" : "s"
+              //   }. Your app has been reset.`,
+              //   [
+              //     {
+              //       text: "OK",
+              //       onPress: () => {
+              //         console.log("Reset success alert dismissed");
+              //       },
+              //     },
+              //   ],
+              // );
+              
             } catch (error) {
               console.log("Error deleting all todos", error);
               Alert.alert("Error", "Failed to reset app");
             }
           },
         },
-      ]
+      ],
     );
   };
 
   return (
-    <LinearGradient colors={colors.gradients.surface} style={settingsStyles.section}>
-      <Text style={settingsStyles.sectionTitleDanger}>Danger Zone</Text>
+    <LinearGradient
+      colors={colors.gradients.surface}
+      style={settingsStyles.section}
+    >
+      <Text testID="danger-zone-text" style={settingsStyles.sectionTitleDanger}>
+        Danger Zone
+      </Text>
 
       <TouchableOpacity
+        testID="reset-btn"
         style={[settingsStyles.actionButton, { borderBottomWidth: 0 }]}
         onPress={handleResetApp}
         activeOpacity={0.7}
       >
         <View style={settingsStyles.actionLeft}>
-          <LinearGradient colors={colors.gradients.danger} style={settingsStyles.actionIcon}>
+          <LinearGradient
+            colors={colors.gradients.danger}
+            style={settingsStyles.actionIcon}
+          >
             <Ionicons name="trash" size={18} color="#ffffff" />
           </LinearGradient>
-          <Text style={settingsStyles.actionTextDanger}>Reset App</Text>
+          <Text testID="reset-btn-text" style={settingsStyles.actionTextDanger}>
+            Reset App
+          </Text>
         </View>
         <Ionicons name="chevron-forward" size={18} color={colors.textMuted} />
       </TouchableOpacity>

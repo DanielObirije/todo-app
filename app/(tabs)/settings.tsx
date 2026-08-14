@@ -23,11 +23,12 @@ const SettingsScreen = () => {
             <LinearGradient colors={colors.gradients.primary} style={settingsStyles.iconContainer}>
               <Ionicons name="settings" size={28} color="#ffffff" />
             </LinearGradient>
-            <Text testID="settings-screen"style={settingsStyles.title}>Settings</Text>
+            <Text testID="settings-screen-text"style={settingsStyles.title}>Settings</Text>
           </View>
         </View>
 
         <ScrollView
+        testID="settings-screen"
           style={settingsStyles.scrollView}
           contentContainerStyle={settingsStyles.content}
           showsVerticalScrollIndicator={false}
