@@ -30,20 +30,6 @@ const DangerZone = () => {
                 `Successfully deleted ${result.deletedCount} todo${result.deletedCount === 1 ? "" : "s"}. Your app has been reset.`
 
               );
-              // Alert.alert(
-              //   "App Reset",
-              //   `Successfully deleted ${result.deletedCount} todo${
-              //     result.deletedCount === 1 ? "" : "s"
-              //   }. Your app has been reset.`,
-              //   [
-              //     {
-              //       text: "OK",
-              //       onPress: () => {
-              //         console.log("Reset success alert dismissed");
-              //       },
-              //     },
-              //   ],
-              // );
               
             } catch (error) {
               console.log("Error deleting all todos", error);
