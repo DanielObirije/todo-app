@@ -1,61 +1,50 @@
-<h1 align="center">React Native for Babies 👶</h1>
+# React Native for Babies
 
 ![Demo App](/assets/images/screenshot-for-readme.png)
 
-Welcome to the **React Native To‑Do App Tutorial**!  
-In this one‑stop tutorial you’ll build a fully functional **real‑time to‑do application** that runs on **iOS, Android, and the web**—all with **React Native + Expo**, and **Convex**.
+Welcome to the React Native To-Do App Tutorial.
 
----
+This is a full-stack, real-time to-do application built with React Native, Expo, and Convex. The project also includes Detox end-to-end tests for testing critical user flows on iOS.
 
-## 🎯 What You'll Build
+## Features
 
-This isn’t just a UI prototype—this is a **real, full‑stack, real‑time to‑do app**.
+* Create, edit, complete, and delete todos
+* Todo progress and statistics
+* Dark mode and app preferences
+* Real-time synchronization with Convex
+* iOS, Android, and Web support
+* End-to-end testing with Detox
 
-✅ Works on **physical devices & simulators** (Android / iOS)  
-✅ Everything updates **instantly** across users (create, complete, delete)  
-✅ No native Swift / Kotlin required—just JavaScript & React Native  
-✅ From ZERO → to HERO in **one video**
+## Tech Stack
 
----
+* React Native
+* Expo
+* TypeScript
+* Convex
+* Detox
+* Jest
 
-## 🧑‍🍳 App Features Overview
+## Project Structure
 
-- 📝 **Todos Tab**
+```text
+app/              # Application screens
+components/       # Reusable components
+convex/            # Convex backend
+hooks/             # Custom hooks
+assets/            # Images, fonts, and styles
 
-  - ➕ Add new tasks
-  - ✅ Mark as completed / uncompleted
-  - 📝 Edit existing tasks
-  - 🗑️ Delete tasks
-  - 📊 Live **progress bar** at the top
+e2e/               # Detox E2E tests
+├── pages/         # Page Objects
+├── tests/         # E2E test cases
+└── utils/         # Test data and helpers
 
-- ⚙️ **Settings Tab**
+android/           # Native Android project
+ios/               # Native iOS project
+.detoxrc.js        # Detox configuration
+package.json       # Project scripts and dependencies
+```
 
-  - 📈 View task stats (total, completed, remaining)
-  - 🌙 Toggle **Dark Mode** (actually works!)
-  - 🔔 Notification toggle (UI only)
-  - 🔄 Auto-sync toggle (UI only)
-  - 🚨 **Danger Zone** to delete everything
-
-- 🔄 **Real-Time Sync**
-  - All updates reflect **instantly** across devices
-  - Powered by **Convex** database
-
----
-
-## 🧠 What You’ll Learn
-
-- 🏗️ Build a mobile app using **React Native + Expo**
-- 🧭 Use both **tab** and **stack** navigation (React Navigation)
-- 🧱 Master core components: `View`, `Text`, `FlatList`, `ScrollView`, `TouchableOpacity`, `Switch`
-- 🌈 Style with gradients, modals, alerts, and themes
-- ⚡ Connect to a real‑time backend with **Convex**
-- 🌓 Implement **Dark Mode** and local state toggles
-- 🧹 Handle deletion, editing, and real-time sync
-- 📱 Run apps on **iOS, Android**, or the **web**—no Mac needed!
-
----
-
-## 📁 .env Setup
+## Environment Setup
 
 Create a `.env` file in the project root:
 
@@ -64,17 +53,93 @@ CONVEX_DEPLOYMENT=<get_it_from_convex>
 EXPO_PUBLIC_CONVEX_URL=<get_it_from_convex>
 ```
 
-## Run the app
+## Installation
 
 ```bash
 npm install
-npx expo
 ```
 
-## Run the Convex db
+## Run the App
 
-- Open a seperate terminal and run;
+Start Expo:
+
+```bash
+npm start
+```
+
+Start Convex in a separate terminal:
 
 ```bash
 npx convex dev
 ```
+
+Run on iOS:
+
+```bash
+npm run ios
+```
+
+Run on Android:
+
+```bash
+npm run android
+```
+
+Run on Web:
+
+```bash
+npm run web
+```
+
+## E2E Testing
+
+The project uses Detox for end-to-end testing. The tests are organized using the Page Object Model to keep test logic and screen interactions maintainable.
+
+Build the iOS app for Detox:
+
+```bash
+npm run detox:build:ios
+```
+
+Run the E2E tests:
+
+```bash
+npm run detox:test:ios
+```
+
+Or run the build and tests together:
+
+```bash
+npm run detox:build:ios && npm run detox:test:ios
+```
+
+The Detox test setup is located in the `e2e` directory:
+
+```text
+e2e/
+├── pages/
+├── tests/
+└── utils/
+```
+
+The `pages` directory contains screen objects, `tests` contains E2E scenarios, and `utils` contains shared helpers and test data.
+
+## Available Scripts
+
+```bash
+npm start
+npm run ios
+npm run android
+npm run web
+npm run lint
+npm run detox:build:ios
+npm run detox:test:ios
+```
+
+## Tutorial
+
+This project is part of the React Native for Babies tutorial, covering the development of a real-time React Native application with automated end-to-end testing.
+
+## License
+
+This project is intended for educational purposes.
