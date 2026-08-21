@@ -1,6 +1,4 @@
-# React Native for Babies
-
-![Demo App](/assets/images/screenshot-for-readme.png)
+# Todo app
 
 This is a full-stack, real-time to-do application built with React Native, Expo, and Convex. The project also includes Detox end-to-end tests for testing critical user flows on iOS.
 
