@@ -2,8 +2,6 @@
 
 ![Demo App](/assets/images/screenshot-for-readme.png)
 
-Welcome to the React Native To-Do App Tutorial.
-
 This is a full-stack, real-time to-do application built with React Native, Expo, and Convex. The project also includes Detox end-to-end tests for testing critical user flows on iOS.
 
 ## Features
@@ -136,10 +134,3 @@ npm run detox:build:ios
 npm run detox:test:ios
 ```
 
-## Tutorial
-
-This project is part of the React Native for Babies tutorial, covering the development of a real-time React Native application with automated end-to-end testing.
-
-## License
-
-This project is intended for educational purposes.
