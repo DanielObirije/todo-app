@@ -23,6 +23,20 @@ module.exports = {
         "-sdk iphonesimulator " +
         "-derivedDataPath ios/build",
     },
+    apps: {
+      "ios.debug": {
+        // your existing iOS config
+      },
+
+      "android.debug": {
+        type: "android.apk",
+
+        binaryPath: "android/app/build/outputs/apk/debug/app-debug.apk",
+
+        build:
+          "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug",
+      },
+    },
   },
 
   devices: {
@@ -32,12 +46,22 @@ module.exports = {
         type: "iPhone 17 Pro",
       },
     },
+    android: {
+      type: "android.emulator",
+      device: {
+        avdName: "Pixel_8_API_35",
+      },
+    },
   },
 
   configurations: {
     "ios.sim.debug": {
       device: "simulator",
       app: "ios.debug",
+    },
+    "android.emu.debug": {
+      device: "android",
+      app: "android.debug",
     },
   },
 };
