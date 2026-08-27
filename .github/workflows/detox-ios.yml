@@ -1,0 +1,50 @@
+```yaml
+name: Detox iOS
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  detox-ios:
+    runs-on: macos-latest
+
+    steps:
+      # Get the project
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # Install everything from package-lock.json
+      - name: Install dependencies
+        run: npm ci
+
+      # Install iOS native dependencies
+      - name: Install CocoaPods
+        run: |
+          cd ios
+          pod install
+
+      # Start Convex
+      - name: Start Convex
+        run: |
+          npx convex dev > convex.log 2>&1 &
+
+      # Give Convex time to start
+      - name: Wait for Convex
+        run: sleep 10
+
+      # Build the Detox iOS app
+      - name: Build Detox iOS app
+        run: npm run detox:build:ios
+
+      # Actually run the Detox tests
+      - name: Run Detox iOS tests
+        run: npm run detox:test:ios
+```

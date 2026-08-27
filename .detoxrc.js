@@ -64,4 +64,13 @@ module.exports = {
       app: "android.debug",
     },
   },
+  // artifacts: {
+  //   rootDir: "./artifacts",
+  //   plugins: {
+  //     screenshot: {
+  //       enabled: true,
+  //       keepOnlyFailedTests: true,
+  //     },
+  //   },
+  // },
 };

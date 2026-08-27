@@ -357,7 +357,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anonymous.todo-app-rn";
-				PRODUCT_NAME = todoapprn;
+				PRODUCT_NAME = "todoapprn";
 				SWIFT_OBJC_BRIDGING_HEADER = "todoapprn/todoapprn-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -388,7 +388,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anonymous.todo-app-rn";
-				PRODUCT_NAME = todoapprn;
+				PRODUCT_NAME = "todoapprn";
 				SWIFT_OBJC_BRIDGING_HEADER = "todoapprn/todoapprn-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
