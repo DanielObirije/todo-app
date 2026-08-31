@@ -23,19 +23,13 @@ module.exports = {
         "-sdk iphonesimulator " +
         "-derivedDataPath ios/build",
     },
-    apps: {
-      "ios.debug": {
-        // your existing iOS config
-      },
+    "android.debug": {
+      type: "android.apk",
 
-      "android.debug": {
-        type: "android.apk",
+      binaryPath: "android/app/build/outputs/apk/debug/app-debug.apk",
 
-        binaryPath: "android/app/build/outputs/apk/debug/app-debug.apk",
-
-        build:
-          "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug",
-      },
+      build:
+        "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug",
     },
   },
 
