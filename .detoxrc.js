@@ -43,7 +43,7 @@ module.exports = {
     android: {
       type: "android.emulator",
       device: {
-        avdName: "Pixel_8_API_35",
+        avdName: "Pixel_8",
       },
     },
   },
